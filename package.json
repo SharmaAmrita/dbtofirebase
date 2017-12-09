@@ -1,12 +1,12 @@
 {
-  "name": "amritacollection",
+  "name": "mongoMigrate",
   "version": "1.0.0",
-  "description": "vella panti",
+  "description": "simple tool for mongodb data migration to firebase/firestore(firebase to firestore)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Ja Amrita",
+  "author": "Amrita sharma",
   "license": "ISC",
   "dependencies": {
     "async": "^2.6.0",
