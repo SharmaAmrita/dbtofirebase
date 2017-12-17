@@ -34,7 +34,7 @@ keys.forEach((keys, i) => {
 });
 
 // Connection URL
-var url = 'mongodb://Mita:mita2017@ds113282.mlab.com:13282/swapp-server-2';
+var url = 'mongodb://xyz';
 // To save the list of collection names.
 var array = [];
 // Connectiong to Db.
