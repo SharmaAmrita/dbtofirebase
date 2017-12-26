@@ -16,7 +16,9 @@
     "firebase-admin": "^5.5.1",
     "minimist": "^1.2.0",
     "mongodb": "^2.2.33",
+    "request": "^2.83.0",
     "sleep": "^5.1.1",
+    "sync-request": "^4.1.0",
     "synchronize": "^2.0.0"
   }
 }
