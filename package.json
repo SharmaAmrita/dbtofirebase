@@ -16,6 +16,7 @@
     "firebase-admin": "^5.5.1",
     "minimist": "^1.2.0",
     "mongodb": "^2.2.33",
+    "polyline": "^0.2.0",
     "request": "^2.83.0",
     "sleep": "^5.1.1",
     "sync-request": "^4.1.0",
