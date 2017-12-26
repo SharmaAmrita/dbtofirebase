@@ -11,6 +11,7 @@ var placesId = [];
 var m = [];
 var lat = [];
 var lng = [];
+var street = [];
 var i = 0 ;
 // Connection URL
 var url = 'mongodb://Amrita:ja.amrita@ds113282.mlab.com:13282/swapp-server-2';
@@ -35,37 +36,36 @@ db.collection('address').distinct(("street"), function(err,dat){
     sync.fiber(function(){db.collection('address').findOne({"street":dat[i]}, fields, function(err, doc){
    lat.push(doc.latitude);
    lng.push(doc.longitude);
+   street.push(doc.street);
    if(lat.length == i)
    {
-      callback(null,lat,lng)
+      callback(null,lat,lng,street)
    }
 })
 });
   i++;
    }
-  },function(arg1,arg2, callback){
+ },function(lat,lng,street,callback){
     var i = 0;
     while(i < 3)
     {
-    var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+arg1[i]+","+arg2[i]+"&key=AIzaSyD3OCzqR3ARiglIlw4-40ZhnnD8S-uHXa8";
+var url ="https://maps.googleapis.com/maps/api/place/autocomplete/json?input="+street[i]+"&types=address&location="+lat[i]+","+lng[i]+"&key=AIzaSyD3OCzqR3ARiglIlw4-40ZhnnD8S-uHXa8";
+
     postRequest(url,i,m);
     i++;
     }
 function postRequest(url,i,m){
-  sync.fiber(function(){
   console.log("I came here I guess", url, i);
     https.get(url, (res) => {
       console.log(url);
 
-      sync.await(res.on('data', (d) => {
+      res.on('data', (d) => {
 
         m.push(d);
-      },sync.defers())).on('end', function() {
+      }).on('end', function() {
   let data   = Buffer.concat(m);
-console.log(m);
-console.log(data);
  let schema = JSON.parse(data);
-
+console.log(schema);
   // var buf = data.slice(17,data.length-14);
   // console.log(JSON.parse(buf.toString()));
   console.log(schema.results);
@@ -83,7 +83,7 @@ console.log(data);
         // {
         //   placesId.push(street(i))
         // }
-});
+
 }
 }
 ],function (err, result){
