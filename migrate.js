@@ -47,7 +47,7 @@ console.log("=>", command);
 
 var backup = [];
 
-var lines = fs.readFileSync('object.json').toString().split('\n');
+var lines = fs.readFileSync('prospects.json').toString().split('\n');
 lines.pop(); // If last element length is lesser than 1, pop from array
 
 // Assign parsed JSON to backup var

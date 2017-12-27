@@ -38,7 +38,7 @@ var fields = {
         var streetDoc = doc;
         streetDoc.place_id = data['predictions'][0]['place_id'];
 //To create Polyline from the viewport given
-      var poly = polyline.encode([[streetDoc.viewport.northeast.lat, streetDoc.viewport.northeast.lat ], [streetDoc.viewport.southwest.lat, streetDoc.viewport.southwest.lat]]);
+      var poly = polyline.encode([[streetDoc.viewport.northeast.lat, streetDoc.viewport.northeast.lng ], [streetDoc.viewport.southwest.lat, streetDoc.viewport.southwest.lng]]);
         streetDoc.polyline = poly;
         //Removing viewport from the streetDoc.
         streetDoc.viewport = undefined;

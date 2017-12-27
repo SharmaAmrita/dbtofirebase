@@ -1,11 +1,11 @@
 const admin = require('firebase-admin');
-const serviceAccount = require("./DemoDocument-a40327a725ff.json");
+const serviceAccount = require("./swappdb.json");
 
-const data = require("./firestore.json");
+const data = require("./swappdb-prospects-export.json");
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://demodocument-8005d.firebaseio.com"
+    databaseURL: "https://swappdb.firebaseio.com/"
 });
 
 data && Object.keys(data).forEach(key => {
