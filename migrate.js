@@ -76,9 +76,9 @@ backup = backup.map(item => {
 
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyCvTjmjl6yS0Vwv34E-ZYiFgZ_qgwKm0JE",
+  apiKey: "key",
   authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-  databaseURL: "https://swappdb.firebaseio.com/",
+  databaseURL: "url",
 };
 
 const firebaseApp = firebase.initializeApp(config);
