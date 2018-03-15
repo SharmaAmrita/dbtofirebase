@@ -99,10 +99,10 @@ for(var i = 0; i<collInfos.length; i++)
 
              // Initialize Firebase
              var config = {
-               apiKey: "AIzaSyDaxGSqtW_vaRypclIKH9zpYWEEI0qBBG0",
+               apiKey: "XXXXXXXXXXXXXXXXXXXXXXXXXXXX",
                authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-               databaseURL: "https://demodocument-8005d.firebaseio.com",
-               storageBucket: "gs://demodocument-8005d.appspot.com"
+               databaseURL: "https://XXXXXXXXXXXXX.firebaseio.com",
+               storageBucket: "gs://XXXXXXXXXXXXXX.appspot.com"
              };
 
              const firebaseApp = firebase.initializeApp(config);
